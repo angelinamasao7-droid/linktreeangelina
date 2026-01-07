@@ -1,0 +1,699 @@
+/* =====================================================
+   ANGELINA MASÃO - PREMIUM LINKTREE
+   Mobile-First Design
+   ===================================================== */
+
+/* CSS Variables - Premium Color Palette */
+:root {
+    /* Core Colors */
+    --black: #0a0a0a;
+    --black-soft: #121212;
+    --black-light: #1a1a1a;
+    --black-lighter: #252525;
+
+    /* Accent Colors */
+    --gold: #d4a574;
+    --gold-light: #e8c9a8;
+    --gold-dark: #b8956a;
+    --nude: #c9a689;
+    --nude-light: #e5d4c5;
+    --rose: #d4a5a5;
+    --pink: #e91e63;
+    --pink-light: #f48fb1;
+
+    /* Social Colors */
+    --tiktok: #000000;
+    --instagram: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    --whatsapp: #25D366;
+    --telegram: #0088cc;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, #d4a574 0%, #f0d9c3 50%, #d4a574 100%);
+    --gradient-card: linear-gradient(145deg, rgba(30, 30, 30, 0.9) 0%, rgba(20, 20, 20, 0.95) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-muted: rgba(255, 255, 255, 0.5);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 40px rgba(212, 165, 116, 0.2);
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 50%;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base Styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--black);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Particles Background */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse at 20% 20%, rgba(212, 165, 116, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(233, 30, 99, 0.05) 0%, transparent 50%);
+}
+
+/* Main Container */
+.container {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    position: relative;
+    z-index: 1;
+}
+
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
+.hero {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    position: relative;
+}
+
+.hero-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background: var(--gradient-glow);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+/* VIP Badge */
+.vip-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(212, 165, 116, 0.1) 100%);
+    border: 1px solid rgba(212, 165, 116, 0.3);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: var(--spacing-md);
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 15px rgba(212, 165, 116, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(212, 165, 116, 0.4);
+    }
+}
+
+.vip-icon {
+    font-size: 0.85rem;
+}
+
+/* Profile Image */
+.profile-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto var(--spacing-md);
+}
+
+.profile-ring {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: var(--radius-full);
+    background: var(--gradient-gold);
+    animation: rotate-ring 8s linear infinite;
+}
+
+@keyframes rotate-ring {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.profile-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--black);
+    z-index: 1;
+}
+
+.online-indicator {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+    background: #22c55e;
+    border: 3px solid var(--black);
+    border-radius: var(--radius-full);
+    z-index: 2;
+    animation: pulse-online 2s ease-in-out infinite;
+}
+
+@keyframes pulse-online {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Name & Tagline */
+.name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* =====================================================
+   SECTION TITLE
+   ===================================================== */
+.section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--gold-light);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+/* =====================================================
+   SOCIAL LINKS SECTION
+   ===================================================== */
+.social-links {
+    margin-bottom: var(--spacing-xl);
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* Social Link Button */
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--gradient-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-smooth);
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left var(--transition-smooth);
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+}
+
+.social-link:hover::before {
+    left: 100%;
+}
+
+.social-link .link-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+}
+
+.social-link .link-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* TikTok */
+.social-link.tiktok .link-icon {
+    background: linear-gradient(135deg, #00f2ea, #ff0050);
+}
+
+/* Instagram */
+.social-link.instagram .link-icon {
+    background: var(--instagram);
+}
+
+/* WhatsApp */
+.social-link.whatsapp .link-icon {
+    background: var(--whatsapp);
+}
+
+/* Telegram */
+.social-link.telegram .link-icon {
+    background: var(--telegram);
+}
+
+.social-link .link-text {
+    flex: 1;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.social-link .link-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.social-link .link-subtitle {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.social-link .link-arrow {
+    font-size: 1.1rem;
+    color: var(--gold);
+    opacity: 0.7;
+}
+
+/* Link Badges */
+.link-badge {
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.link-badge.free {
+    background: var(--whatsapp);
+    color: white;
+}
+
+.link-badge.vip {
+    background: var(--gradient-gold);
+    color: var(--black);
+}
+
+/* =====================================================
+   SERVICES / PACKS SECTION
+   ===================================================== */
+.services {
+    margin-bottom: var(--spacing-xl);
+}
+
+.packs-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* Pack Card */
+.pack-card {
+    background: var(--gradient-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.pack-card.popular {
+    border: 2px solid var(--pink);
+    box-shadow: 0 0 30px rgba(233, 30, 99, 0.2);
+}
+
+.pack-card.advanced-pack {
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 30px rgba(212, 165, 116, 0.2);
+}
+
+.popular-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--pink);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 0 var(--radius-lg) 0 var(--radius-sm);
+}
+
+.vip-badge-pack {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--gradient-gold);
+    color: var(--black);
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 0 var(--radius-lg) 0 var(--radius-sm);
+}
+
+.pack-header {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.pack-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.pack-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.pack-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+}
+
+.pack-price .currency {
+    font-size: 1rem;
+    color: var(--gold);
+}
+
+.pack-price .price-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.free-pack .pack-price .price-value {
+    font-size: 1.3rem;
+    color: var(--whatsapp);
+}
+
+/* Pack Features */
+.pack-features {
+    list-style: none;
+    margin-bottom: var(--spacing-md);
+    padding: 0;
+}
+
+.pack-features li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pack-features li:last-child {
+    border-bottom: none;
+}
+
+/* Pack Button */
+.pack-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all var(--transition-fast);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pack-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.pack-button.highlight {
+    background: var(--pink);
+    border-color: var(--pink);
+    color: white;
+}
+
+.pack-button.highlight:hover {
+    background: #c2185b;
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
+}
+
+.pack-button.premium {
+    background: var(--gradient-gold);
+    border-color: var(--gold);
+    color: var(--black);
+}
+
+.pack-button.premium:hover {
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+}
+
+/* =====================================================
+   GALLERY PREVIEW
+   ===================================================== */
+.gallery-preview {
+    margin-bottom: var(--spacing-xl);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.gallery-item {
+    position: relative;
+    aspect-ratio: 3/4;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-smooth);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: var(--spacing-sm);
+}
+
+.gallery-overlay span {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--gold-light);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 10px;
+    border-radius: 15px;
+    backdrop-filter: blur(4px);
+}
+
+/* =====================================================
+   TESTIMONIALS SECTION
+   ===================================================== */
+.testimonials-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.testimonials-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.testimonial {
+    background: var(--gradient-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+}
+
+.testimonial-stars {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+}
+
+.testimonial p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.testimonial-author {
+    font-size: 0.75rem;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-brand {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-legal {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.5;
+}
+
+.footer-copy {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 380px) {
+    .container {
+        padding: var(--spacing-sm);
+    }
+
+    .name {
+        font-size: 1.7rem;
+    }
+
+    .pack-price .price-value {
+        font-size: 1.8rem;
+    }
+}
+
+/* Selection Color */
+::selection {
+    background: rgba(212, 165, 116, 0.3);
+    color: var(--text-primary);
+}
+
+/* Focus States */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
