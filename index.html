@@ -20,6 +20,26 @@
     <div class="bg-glow secondary"></div>
     <div class="particles"></div>
 
+    <!-- Floating Notification -->
+    <div class="floating-notification" id="notification">
+        <div class="notification-content">
+            <div class="notification-avatar">
+                <img src="profile.jpg" alt="Angelina">
+                <span class="notification-badge">🔔</span>
+            </div>
+            <div class="notification-text">
+                <span class="notification-title">Angelina postou no grupo VIP</span>
+                <span class="notification-message">Indo para academia 🏋️‍♀️ Daily vlog...</span>
+            </div>
+            <div class="notification-preview">
+                <div class="notification-blur">
+                    <span>🔒</span>
+                </div>
+            </div>
+        </div>
+        <button class="notification-close" onclick="closeNotification()">×</button>
+    </div>
+
     <!-- Main Container -->
     <main class="container">
 
@@ -147,6 +167,76 @@
             </div>
         </section>
 
+        <!-- Gallery Preview -->
+        <section class="gallery-preview">
+            <div class="section-header">
+                <div class="section-line"></div>
+                <h2 class="section-title">Preview 👀</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <!-- Content Stats -->
+            <div class="content-stats">
+                <div class="stat-item">
+                    <span class="stat-number">+675</span>
+                    <span class="stat-label">fotos</span>
+                </div>
+                <div class="stat-divider">•</div>
+                <div class="stat-item">
+                    <span class="stat-number">+365</span>
+                    <span class="stat-label">vídeos</span>
+                </div>
+            </div>
+
+            <div class="gallery-grid-large">
+                <div class="gallery-item">
+                    <img src="MIDIAS PARA LINK TREE/G6z27d3XEAEZH8v.jfif" alt="Preview 1">
+                    <div class="gallery-overlay">
+                        <span class="lock-icon">🔒</span>
+                        <span>Desbloqueie</span>
+                    </div>
+                </div>
+                <div class="gallery-item censored">
+                    <img src="MIDIAS PARA LINK TREE/GFsKUjIW8AEX1aO.jfif" alt="Preview 2">
+                    <div class="censor-bar"></div>
+                    <div class="gallery-overlay">
+                        <span class="lock-icon">🔒</span>
+                        <span>Desbloqueie</span>
+                    </div>
+                </div>
+                <div class="gallery-item censored">
+                    <img src="MIDIAS PARA LINK TREE/GiCFtRjXAAAMoGO.jfif" alt="Preview 3">
+                    <div class="censor-bar bottom"></div>
+                    <div class="gallery-overlay">
+                        <span class="lock-icon">🔒</span>
+                        <span>Desbloqueie</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="MIDIAS PARA LINK TREE/GkWghbAW0AEJUPJ.jfif" alt="Preview 4">
+                    <div class="gallery-overlay">
+                        <span class="lock-icon">🔒</span>
+                        <span>Desbloqueie</span>
+                    </div>
+                </div>
+                <div class="gallery-item censored">
+                    <img src="MIDIAS PARA LINK TREE/GlYLCNvWgAAvHD3.jfif" alt="Preview 5">
+                    <div class="censor-bar"></div>
+                    <div class="gallery-overlay">
+                        <span class="lock-icon">🔒</span>
+                        <span>Desbloqueie</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="MIDIAS PARA LINK TREE/GlkN9VBXwAEoz_S.jfif" alt="Preview 6">
+                    <div class="gallery-overlay">
+                        <span class="lock-icon">🔒</span>
+                        <span>Desbloqueie</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Packs Section -->
         <section class="services">
             <div class="section-header">
@@ -213,87 +303,91 @@
             </div>
         </section>
 
-        <!-- Gallery Preview -->
-        <section class="gallery-preview">
-            <div class="section-header">
-                <div class="section-line"></div>
-                <h2 class="section-title">Preview 👀</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="photo1.jpg" alt="Preview 1">
-                    <div class="gallery-overlay">
-                        <span class="lock-icon">🔒</span>
-                        <span>Desbloqueie</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="photo2.jpg" alt="Preview 2">
-                    <div class="gallery-overlay">
-                        <span class="lock-icon">🔒</span>
-                        <span>Desbloqueie</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Testimonials Section -->
         <section class="testimonials-section">
             <div class="section-header">
                 <div class="section-line"></div>
-                <h2 class="section-title">Depoimentos 💕</h2>
+                <h2 class="section-title">Depoimentos �</h2>
                 <div class="section-line"></div>
             </div>
 
             <div class="testimonials-container">
                 <div class="testimonial">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">L</div>
+                        <div class="testimonial-avatar male">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Lucas">
+                        </div>
                         <div class="testimonial-info">
                             <span class="testimonial-author">Lucas S.</span>
                             <div class="testimonial-stars">★★★★★</div>
                         </div>
+                        <span class="testimonial-verified">✓ Verificado</span>
                     </div>
-                    <p>"A Angelina é muito gente boa, sempre responde super rápido e dá muita atenção. Melhor
-                        investimento! 🔥"</p>
+                    <p class="testimonial-text">Mano a Angelina é diferenciada demais, sempre responde rápido e dá muita
+                        atenção. Melhor investimento que fiz 🔥</p>
                 </div>
 
                 <div class="testimonial">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">P</div>
+                        <div class="testimonial-avatar male">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Pedro">
+                        </div>
                         <div class="testimonial-info">
                             <span class="testimonial-author">Pedro M.</span>
                             <div class="testimonial-stars">★★★★★</div>
                         </div>
+                        <span class="testimonial-verified">✓ Verificado</span>
                     </div>
-                    <p>"Ganhei umas fotos quentes demais só por ter sido legal com ela. Conteúdo top e super carinhosa
-                        💕"</p>
+                    <p class="testimonial-text">Ganhei umas fotos quentes demais só por ter sido legal com ela. Conteúdo
+                        brabo e ela é super carinhosa</p>
                 </div>
 
                 <div class="testimonial">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">R</div>
+                        <div class="testimonial-avatar male">
+                            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Rafael">
+                        </div>
                         <div class="testimonial-info">
                             <span class="testimonial-author">Rafael T.</span>
                             <div class="testimonial-stars">★★★★★</div>
                         </div>
+                        <span class="testimonial-verified">✓ Verificado</span>
                     </div>
-                    <p>"Pensei que era bot mas é ela mesma! Conversa de verdade e manda conteúdo exclusivo 😍"</p>
+                    <p class="testimonial-text">Pensei que era bot mas é ela mesma kkk conversa de verdade e manda
+                        conteúdo exclusivo pros assinantes</p>
                 </div>
 
                 <div class="testimonial">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">B</div>
+                        <div class="testimonial-avatar male">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Bruno">
+                        </div>
                         <div class="testimonial-info">
                             <span class="testimonial-author">Bruno C.</span>
                             <div class="testimonial-stars">★★★★★</div>
                         </div>
+                        <span class="testimonial-verified">✓ Verificado</span>
                     </div>
-                    <p>"A amizade colorida é outro nível! Ela faz tudo que eu peço e ainda me trata super bem 🥵"</p>
+                    <p class="testimonial-text">A amizade colorida é outro nível cara. Ela faz tudo que eu peço e ainda
+                        me trata super bem, to viciado</p>
                 </div>
             </div>
+
+            <!-- Add Review Button -->
+            <button class="add-review-btn" onclick="showReviewMessage()">
+                <span>💬</span>
+                <span>Deixar depoimento</span>
+            </button>
         </section>
+
+        <!-- Review Message Modal -->
+        <div class="review-modal" id="reviewModal">
+            <div class="review-modal-content">
+                <span class="review-modal-icon">🔒</span>
+                <p>Adquira o conteúdo para comentar sobre</p>
+                <a href="#amizade-colorida" class="review-modal-btn" onclick="closeReviewModal()">Ver packs</a>
+            </div>
+        </div>
 
         <!-- Footer -->
         <footer class="footer">
