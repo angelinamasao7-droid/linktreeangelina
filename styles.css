@@ -26,6 +26,11 @@
     --tiktok-1: #00F2EA;
     --tiktok-2: #FF0050;
     --whatsapp: #25D366;
+    --instagram-1: #f09433;
+    --instagram-2: #e6683c;
+    --instagram-3: #dc2743;
+    --instagram-4: #cc2366;
+    --telegram: #0088cc;
 
     /* Text */
     --text-primary: #FFFFFF;
@@ -291,7 +296,27 @@ body {
     color: var(--text-secondary);
     font-weight: 300;
     letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Bio */
+.bio {
+    background: var(--gradient-premium);
+    border: 1px solid rgba(201, 169, 98, 0.15);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
     margin-bottom: var(--spacing-md);
+}
+
+.bio p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.7;
+}
+
+.bio strong {
+    color: var(--gold-light);
 }
 
 /* Status Badge */
@@ -390,6 +415,14 @@ body {
     background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(37, 211, 102, 0.05));
 }
 
+.social-link.instagram .link-glow {
+    background: linear-gradient(135deg, rgba(240, 148, 51, 0.15), rgba(220, 39, 67, 0.1));
+}
+
+.social-link.telegram .link-glow {
+    background: linear-gradient(135deg, rgba(0, 136, 204, 0.15), rgba(0, 136, 204, 0.05));
+}
+
 .social-link:hover .link-glow {
     opacity: 1;
 }
@@ -421,8 +454,16 @@ body {
     background: linear-gradient(135deg, var(--tiktok-1), var(--tiktok-2));
 }
 
+.social-link.instagram .link-icon {
+    background: linear-gradient(135deg, var(--instagram-1), var(--instagram-2), var(--instagram-3), var(--instagram-4));
+}
+
 .social-link.whatsapp .link-icon {
     background: var(--whatsapp);
+}
+
+.social-link.telegram .link-icon {
+    background: var(--telegram);
 }
 
 .link-text {
@@ -461,6 +502,11 @@ body {
 .link-badge.free {
     background: var(--whatsapp);
     color: white;
+}
+
+.link-badge.vip {
+    background: var(--gradient-gold);
+    color: var(--black);
 }
 
 .link-arrow {
@@ -597,6 +643,12 @@ body {
     line-height: 1;
 }
 
+.pack-telegram-hint {
+    font-size: 0.75rem;
+    color: var(--gold-light);
+    margin-top: 10px;
+}
+
 /* Pack Features */
 .pack-features {
     list-style: none;
@@ -618,6 +670,11 @@ body {
 .pack-features .check {
     color: var(--gold);
     font-weight: 600;
+}
+
+.pack-features .check.gold {
+    color: var(--gold-light);
+    text-shadow: 0 0 10px var(--gold-glow);
 }
 
 /* Pack Button */
