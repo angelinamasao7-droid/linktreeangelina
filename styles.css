@@ -419,6 +419,10 @@ body {
     background: linear-gradient(135deg, rgba(240, 148, 51, 0.15), rgba(220, 39, 67, 0.1));
 }
 
+.social-link.kwai .link-glow {
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.15), rgba(255, 153, 0, 0.1));
+}
+
 .social-link.telegram .link-glow {
     background: linear-gradient(135deg, rgba(0, 136, 204, 0.15), rgba(0, 136, 204, 0.05));
 }
@@ -456,6 +460,10 @@ body {
 
 .social-link.instagram .link-icon {
     background: linear-gradient(135deg, var(--instagram-1), var(--instagram-2), var(--instagram-3), var(--instagram-4));
+}
+
+.social-link.kwai .link-icon {
+    background: linear-gradient(135deg, #FF6600, #FF9900);
 }
 
 .social-link.whatsapp .link-icon {
